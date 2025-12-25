@@ -750,6 +750,9 @@ useEffect(() => {
           <a href={'/invest'} className={`mobile-menu-item ${pathname === '/invest' ? 'active' : ''}`}>
             Invest
           </a>
+          <a href={'/payment'} className={`mobile-menu-item ${pathname === '/payment' ? 'active' : ''}`}>
+            Payment
+          </a>
           <a href={'/analytics'} className={`mobile-menu-item ${pathname === '/analytics' ? 'active' : ''}`}>
             Analytics
           </a>
@@ -771,6 +774,9 @@ useEffect(() => {
             </a>
             <a href={'/invest'} className={`nav-item ${pathname === '/invest' ? 'active' : ''}`}>
               Invest
+            </a>
+            <a href={'/payment'} className={`nav-item ${pathname === '/payment' ? 'active' : ''}`}>
+              Payment
             </a>
             <a href={'/history'} className={`nav-item ${pathname === '/history' ? 'active' : ''}`}>
               History

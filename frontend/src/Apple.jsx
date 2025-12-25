@@ -17,6 +17,7 @@ import RequireAuth from './components/RequireAuth';
 import { useEffect } from 'react';
 import { getAuthSession, logout } from './utils/session';
 import CryptoProfilePage from './pages/Account';
+import CryptoPaymentPage from './pages/Payment';
 
 
 
@@ -41,6 +42,7 @@ const AppLayout = () => (
       <Route path="/trade" element={<CryptoTradingPlatform />} />
       <Route path="/analytics" element={<AnalyticsPage />} />
       <Route path="/account" element={<CryptoProfilePage />} />
+      <Route path="/payment" element={<CryptoPaymentPage />} />
     </Routes>
   </>
 );
