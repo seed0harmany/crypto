@@ -146,6 +146,7 @@ export default function CryptoAuthPages() {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           letter-spacing: -0.02em;
+          text-decoration: none;
         }
 
         .start {
