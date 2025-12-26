@@ -5,9 +5,13 @@ import authRoutes from './routes/auth.routes.js';
 const app = express();
 
 app.use(cors({
-  origin: true,
+  origin: [
+    'http://localhost:5173',
+    'https://cryptowealth-bgcz.onrender.com'
+  ],
   credentials: true
 }));
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
