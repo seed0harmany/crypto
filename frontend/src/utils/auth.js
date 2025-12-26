@@ -1,7 +1,7 @@
 import {API_BASE} from '../config/Api.js';
 
 export async function registerUser(payload) {
-  const res = await fetch(`${API_BASE}/auth/register`, {
+  const res = await fetch(`${API_BASE}/api/auth/register`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
@@ -13,7 +13,7 @@ export async function registerUser(payload) {
 }
 
 export async function loginUser(payload) {
-  const res = await fetch(`${API_BASE}/auth/login`, {
+  const res = await fetch(`${API_BASE}/api/auth/login`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload)
