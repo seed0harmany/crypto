@@ -7,7 +7,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://cryptowealth-bgcz.onrender.com'
+    'https://crypto-dun-psi.vercel.app/'
   ],
   credentials: true
 }));
