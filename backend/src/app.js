@@ -4,10 +4,11 @@ import authRoutes from './routes/auth.routes.js';
 
 const app = express();
 
+app.options('*', cors());
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://crypto-dun-psi.vercel.app/'
+    'https://crypto-dun-psi.vercel.app'
   ],
   credentials: true
 }));
