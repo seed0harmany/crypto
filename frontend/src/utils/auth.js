@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api'; // adjust port if needed
+import {API_BASE} from '../config/Api.js';
 
 export async function registerUser(payload) {
   const res = await fetch(`${API_BASE}/auth/register`, {
