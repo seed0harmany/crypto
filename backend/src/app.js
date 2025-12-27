@@ -7,7 +7,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://crypto-dun-psi.vercel.app'
+    'https://cryptowealth-silk.vercel.app'
   ],
   credentials: true
 }));
