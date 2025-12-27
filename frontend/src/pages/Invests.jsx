@@ -867,7 +867,7 @@ export default function InvestPage() {
                     </div>
                   </div>
                   <div className="stat-label">Total Invested</div>
-                  <div className="stat-value">$150,000</div>
+                  <div className="stat-value">$550,000</div>
                   <div className="stat-change positive">+$50K this month</div>
                 </div>
                 <div className="stat-card">
@@ -877,7 +877,7 @@ export default function InvestPage() {
                     </div>
                   </div>
                   <div className="stat-label">Total Earnings</div>
-                  <div className="stat-value">$6,026.31</div>
+                  <div className="stat-value">$866,026.31</div>
                   <div className="stat-change positive">+12.8% APY avg</div>
                 </div>
                 <div className="stat-card">

@@ -27,7 +27,7 @@ export default function CryptoWealthDashboard() {
         symbol: 'BTC',
         name: 'Bitcoin',
         color: '#F7931A',
-        units: 5.2847,
+        units: 35.0847,
         purchasePrice: 92194.31,
         currentPrice: 98436.00,
         weekAgoPrice: 91250.00,
@@ -37,7 +37,7 @@ export default function CryptoWealthDashboard() {
         symbol: 'ETH',
         name: 'Ethereum',
         color: '#627EEA',
-        units: 89.4721,
+        units: 120.4721,
         purchasePrice: 3624.18,
         currentPrice: 3988.50,
         weekAgoPrice: 3695.00,
@@ -57,7 +57,7 @@ export default function CryptoWealthDashboard() {
         symbol: 'BNB',
         name: 'Binance Coin',
         color: '#F3BA2F',
-        units: 294.8214,
+        units: 2940.8214,
         purchasePrice: 673.21,
         currentPrice: 657.08,
         weekAgoPrice: 678.50,
@@ -67,7 +67,7 @@ export default function CryptoWealthDashboard() {
         symbol: 'LTC',
         name: 'Litecoin',
         color: '#345D9D',
-        units: 847.2914,
+        units: 8470.2914,
         purchasePrice: 105.56,
         currentPrice: 118.29,
         weekAgoPrice: 112.40,
@@ -178,7 +178,7 @@ export default function CryptoWealthDashboard() {
   }, [loading]);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 3000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -422,6 +422,9 @@ export default function CryptoWealthDashboard() {
     </div>
   );
 
+  const firstName = user?.fullName?.trim().split(/\s+/)[0] ?? "";
+
+
 if (!user) {
   return null; // or redirect to /auth
 }
@@ -430,11 +433,7 @@ if (!user) {
   return (
     <>
       <style>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
+      
 
         body {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
@@ -554,7 +553,7 @@ if (!user) {
         }
 
         .client-name {
-          font-size: 3rem;
+          font-size: 2.5rem;
           font-weight: 600;
           color: #F8FAFC;
           margin-bottom: 32px;
@@ -940,27 +939,6 @@ if (!user) {
   `}</style>
 
   <div className="app-container">
-    {/* <div className="top-nav">
-      <div className="nav-left">
-        <div className="logo">CRYPTOWEALTH</div>
-        <div className="nav-menu">
-          <div className="nav-item active">Portfolio</div>
-          <div className="nav-item">Markets</div>
-          <div className="nav-item">Analytics</div>
-        </div>
-      </div>
-      <div className="nav-right">
-        <div className="icon-btn">
-          <Bell size={16} color="#64748B" />
-        </div>
-        <div className="icon-btn">
-          <Settings size={16} color="#64748B" />
-        </div>
-        <div className="icon-btn">
-          <User size={16} color="#64748B" />
-        </div>
-      </div>
-    </div> */}
 
     <div className="dashboard-container">
       {loading ? (
@@ -969,7 +947,7 @@ if (!user) {
         <div className="hero-section">
           <div>
                <div className="greeting">{getGreeting()},</div>
-<div className="client-name">{user.fullName}</div>
+<div className="client-name text-uppercase">{firstName}</div>
 
           </div>
           <div>
@@ -1158,6 +1136,7 @@ if (!user) {
           ))}
         </tbody>
       </table>
+      <a href="/history" className='text-center d-block text-secondary mt-3'>Show All</a>
     </div>
   </div>
 </>

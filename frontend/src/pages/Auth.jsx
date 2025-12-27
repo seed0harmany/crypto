@@ -569,7 +569,7 @@ export default function CryptoAuthPages() {
 
           <div className="auth-footer">
             <p className="auth-footer-text">
-              {/* {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
+              {isSignUp ? 'Already have an account?' : "Don't have an account?"}{' '}
               <a
                 href="#"
                 className="auth-footer-link"
@@ -579,7 +579,7 @@ export default function CryptoAuthPages() {
                 }}
               >
                 {isSignUp ? 'Sign In' : 'Sign Up'}
-              </a> */}
+              </a>
             </p>
           </div>
         </div>

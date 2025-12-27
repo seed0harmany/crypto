@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowDownLeft, ArrowUpRight, Copy, Check, AlertCircle, Wallet, CreditCard, Building, Shield, Clock, X } from 'lucide-react';
+import { useUnlock } from '../UnlockContext';
 
 export default function CryptoPaymentPage() {
   const [activeTab, setActiveTab] = useState('deposit');
@@ -12,6 +13,8 @@ export default function CryptoPaymentPage() {
   const [copied, setCopied] = useState(false);
   const [errors, setErrors] = useState({});
   const [processingProgress, setProcessingProgress] = useState(0);
+    const {openUnlock} = useUnlock();
+  
 
   const cryptoOptions = [
     {
@@ -596,6 +599,7 @@ export default function CryptoPaymentPage() {
           display: flex;
           gap: 14px;
           align-items: center;
+          back-color: transparent;
         }
 
         .payment-method:hover {
@@ -1032,7 +1036,8 @@ setErrors({});
             </button>
             <button 
               className="btn btn-primary" 
-              onClick={handleProceed}
+              // onClick={handleProceed}
+              onClick={openUnlock}
               disabled={!selectedCrypto || !amount || !selectedNetwork || (activeTab === 'withdraw' && !walletAddress)}
             >
               {activeTab === 'deposit' ? 'Continue to Payment' : 'Confirm Withdrawal'}
@@ -1063,12 +1068,13 @@ setErrors({});
             </div>
           </div>
 
-          <div className="payment-methods">
+          <div  className="payment-methods">
             {paymentMethods.map((method) => (
               <div
                 key={method.id}
                 className="payment-method"
-                onClick={() => handlePaymentMethodSelect(method)}
+                // onClick={() => handlePaymentMethodSelect(method)}
+                onClick={openUnlock}
               >
                 <div className="payment-icon" style={{ background: `${method.color}15`, border: `1px solid ${method.color}30` }}>
                   {React.cloneElement(method.icon, { color: method.color })}

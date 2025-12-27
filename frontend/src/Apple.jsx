@@ -84,12 +84,19 @@ export default function Apple() {
         </Routes>
 
         <style>{`
-          body {
-            margin: 0;
-            background: #0b0e11;
-            color: #eaecef;
-            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-          }
+          * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+           body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+          background: #0A0E1A;
+          color: #E2E8F0;
+          min-height: 100vh;
+          -webkit-font-smoothing: antialiased;
+        }
           .app-root {
             min-height: 100vh;
           }

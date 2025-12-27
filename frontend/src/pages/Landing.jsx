@@ -572,6 +572,9 @@ export default function CryptoLandingPage() {
           font-weight: 600;
           cursor: pointer;
           transition: all 0.2s;
+          display:flex;
+          justify-content:center;
+          text-decoration:none;
         }
 
         .pricing-card.highlighted .pricing-button {
@@ -999,9 +1002,9 @@ export default function CryptoLandingPage() {
                       </li>
                     ))}
                   </ul>
-                  <button className="pricing-button">
+                  <a href='/auth' className="pricing-button">
                     {plan.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
-                  </button>
+                  </a>
                 </div>
               ))}
             </div>
@@ -1017,10 +1020,10 @@ export default function CryptoLandingPage() {
                 Join thousands of investors who trust CryptoWealth for their digital asset management.
                 Start your free trial today.
               </p>
-              <button className="btn-primary">
+              <a href='/auth' className="btn-primary text-decoration-none">
                 Create Free Account
                 <ArrowRight size={20} />
-              </button>
+              </a>
             </div>
           </div>
         </section>

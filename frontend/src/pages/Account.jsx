@@ -4,6 +4,7 @@ import { User, Mail, Phone, MapPin, Shield, Bell, Key, Globe, CreditCard, Downlo
 export default function CryptoProfilePage() {
   const [activeTab, setActiveTab] = useState('profile');
   const [editMode, setEditMode] = useState(false);
+  const user = JSON.parse(localStorage.getItem('auth_user'));
   const [notifications, setNotifications] = useState({
     email: true,
     push: true,
@@ -12,11 +13,12 @@ export default function CryptoProfilePage() {
     security: true,
     newsletter: false
   });
+  
 
   const [profileData, setProfileData] = useState({
-    fullName: 'Cynthia Logan',
-    email: 'cynxy@crypto.com',
-    phone: '+1 (269) 257‑8015',
+    fullName: user.fullName,
+    email: user.email,
+    phone: '+1 (269) 257-8015',
     location: 'San Francisco, CA',
     memberSince: 'January 2023',
     accountType: 'Professional',
@@ -55,6 +57,15 @@ export default function CryptoProfilePage() {
     { name: 'Binance', status: 'connected', lastSync: '5 hours ago', icon: 'B' },
     { name: 'Kraken', status: 'disconnected', lastSync: 'Never', icon: 'K' }
   ];
+
+const initials =
+  profileData?.fullName
+    ?.trim()
+    .split(/\s+/)
+    .map(part => part[0].toUpperCase())
+    .join("") ?? "";
+
+
 
   return (
     <>
@@ -688,7 +699,7 @@ export default function CryptoProfilePage() {
             <div className="profile-card">
               <div className="avatar-container">
                 <div className="avatar">
-                  <div className="avatar-text">CL</div>
+                  <div className="avatar-text">{initials}</div>
                 </div>
                 <div className="avatar-upload">
                   <Camera size={18} color="white" />

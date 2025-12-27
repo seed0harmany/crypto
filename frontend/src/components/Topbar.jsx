@@ -5,6 +5,7 @@ import { useUnlock } from "../UnlockContext";
 
 
 export default function Topbar() {
+    const [loading, setLoading] = useState(true);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [notificationsOpen, setNotificationsOpen] = useState(false);
     const [notifications, setNotifications] = useState([
@@ -69,6 +70,7 @@ export default function Topbar() {
         color: '#8B5CF6'
       }
     ]);
+
 
     const notificationRef = useRef(null);
     const pathname = window.location.pathname;
@@ -753,6 +755,9 @@ useEffect(() => {
           </a>
           <a href={'/payment'} className={`mobile-menu-item ${pathname === '/payment' ? 'active' : ''}`}>
             Payment
+          </a>
+          <a href={'/history'} className={`mobile-menu-item ${pathname === '/history' ? 'active' : ''}`}>
+            History
           </a>
           <a href={'/analytics'} className={`mobile-menu-item ${pathname === '/analytics' ? 'active' : ''}`}>
             Analytics
